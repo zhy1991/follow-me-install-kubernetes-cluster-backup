@@ -4,22 +4,23 @@
 export ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)
 
 # 集群各机器 IP 数组
-export NODE_IPS=(172.27.137.240 172.27.137.239 172.27.137.238)
+export NODE_IPS=(192.168.31.54 192.168.31.55 192.168.31.56 192.168.31.57 192.168.31.58 192.168.31.59)
 
 # 集群各 IP 对应的主机名数组
-export NODE_NAMES=(zhangjun-k8s01 zhangjun-k8s02 zhangjun-k8s03)
+export NODE_NAMES=(k8s-dev-master01-54 k8s-dev-master02-55 k8s-dev-master03-56 k8s-dev-node01-57 k8s-dev-node02-58 k8s-dev-node03-59)
 
 # etcd 集群服务地址列表
-export ETCD_ENDPOINTS="https://172.27.137.240:2379,https://172.27.137.239:2379,https://172.27.137.238:2379"
+export ETCD_ENDPOINTS="https://192.168.31.54:2379,https://192.168.31.55:2379,https://192.168.31.56:2379"
 
 # etcd 集群间通信的 IP 和端口
-export ETCD_NODES="zhangjun-k8s01=https://172.27.137.240:2380,zhangjun-k8s02=https://172.27.137.239:2380,zhangjun-k8s03=https://172.27.137.238:2380"
+export ETCD_NODES="k8s-dev-master01-54=https://192.168.31.54:2380,k8s-dev-master02-55=https://192.168.31.55:2380,k8s-dev-master03-56=https://192.168.31.56:2380"
+export ETCD_IPS=(192.168.31.54 192.168.31.55 192.168.31.56)
 
 # kube-apiserver 的反向代理(kube-nginx)地址端口
 export KUBE_APISERVER="https://127.0.0.1:8443"
 
 # 节点间互联网络接口名称
-export IFACE="eth0"
+export IFACE="ens160"
 
 # etcd 数据目录
 export ETCD_DATA_DIR="/data/k8s/etcd/data"

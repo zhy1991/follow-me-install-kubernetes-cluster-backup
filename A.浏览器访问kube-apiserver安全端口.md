@@ -20,7 +20,8 @@ keytool -import -v -trustcacerts -alias appmanagement -file "PATH...\\ca.pem" -s
 
 ![ssl-success](images/ssl-success.png)
 
-我们需要给浏览器生成一个 client 证书，访问 apiserver 的 6443 https 端口时使用。
+
+解决方法是：我们需要给浏览器生成一个 client 证书，访问 apiserver 的 6443 https 端口时使用。
 
 这里使用部署 kubectl 命令行工具时创建的 admin 证书、私钥和上面的 ca 证书，创建一个浏览器可以使用 PKCS#12/PFX 格式的证书：
 
